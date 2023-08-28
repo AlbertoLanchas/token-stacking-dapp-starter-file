@@ -121,3 +121,15 @@ function formatEthErrorMsg(error) {
     return "Something went wrong!";
   }
 }
+
+function getSelectedTab(sClass) {
+  console.log(sClass);
+  return sClass || contractCall;
+}
+
+function getContractObj(sClass) {
+  new web3.eth.Contract(
+    SELECT_CONTRACT[_NETWORK_ID].STACKING.abi,
+    SELECT_CONTRACT[_NETWORK_ID].STACKING[sClass].address
+  );
+}
